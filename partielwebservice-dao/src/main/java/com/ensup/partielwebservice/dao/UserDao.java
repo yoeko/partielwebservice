@@ -11,13 +11,13 @@ import com.ensup.partielwebservice.domaine.Etudiant;
 import com.ensup.partielwebservice.domaine.Personne;
 import com.ensup.partielwebservice.domaine.User;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+/*import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;*/
 
 
 public class UserDao implements IUserDao {
 	
-	private static final Logger daoLogger = LogManager.getLogger(UserDao.class);
+	//private static final Logger daoLogger = LogManager.getLogger(UserDao.class);
 
 	/**
 	 * createUser
@@ -71,11 +71,11 @@ public class UserDao implements IUserDao {
 		
 		try {
 			user =  em.createQuery("SELECT u FROM User u WHERE u.login = '" + login + "' AND u.password = '" + password + "'"  , User.class).getSingleResult();
-			daoLogger.info("User trouvé");
+			//daoLogger.info("User trouvé");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			daoLogger.info("Utilisateur non trouvé");
+			//daoLogger.info("Utilisateur non trouvé");
 		}
 		
 		return user;

@@ -18,7 +18,7 @@ import javax.persistence.InheritanceType;
 public class Personne {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	private String first_name;
 	private String last_name;
